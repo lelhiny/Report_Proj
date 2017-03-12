@@ -2,7 +2,7 @@
 parameters:
     database_host: localhost
     database_port: null
-    database_name: report_proj
+    database_name: report_project
     database_user: root
     database_password: null
     mailer_transport: smtp
