@@ -1,0 +1,58 @@
+AppBundle\Entity\Request:
+    type: entity
+    table: request
+    indexes:
+        report_id:
+            columns:
+                - report_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        employeeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: employee_id
+        managerId:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: manager_id
+        requestType:
+            type: string
+            nullable: false
+            length: 15
+            fixed: false
+            column: request_type
+        justification:
+            type: text
+            nullable: true
+            length: 65535
+            fixed: false
+        action:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+        updatedAt:
+            type: datetime
+            nullable: false
+            default: CURRENT_TIMESTAMP
+            column: updated_at
+    manyToOne:
+        report:
+            targetEntity: Report
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                report_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,32 @@
+AppBundle\Entity\GeneralReport:
+    type: entity
+    table: general_report
+    indexes:
+        report_id:
+            columns:
+                - report_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        text:
+            type: text
+            nullable: true
+            length: 65535
+            fixed: false
+    manyToOne:
+        report:
+            targetEntity: Report
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                report_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

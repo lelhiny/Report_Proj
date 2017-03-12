@@ -1,0 +1,3 @@
+{# app/Resources/views/lucky/number.html.twig #}
+
+<h1>Thanks for submiting the report, Your report ID is {{ theID }}</h1>

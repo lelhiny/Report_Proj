@@ -1,0 +1,37 @@
+AppBundle\Entity\SiteReport:
+    type: entity
+    table: site_report
+    indexes:
+        report_id:
+            columns:
+                - report_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        latitude:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        longitude:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+    manyToOne:
+        report:
+            targetEntity: Report
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                report_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
